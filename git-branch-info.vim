@@ -98,7 +98,7 @@ function! GitBranchInfoString()
 	if s:menu_on == 0
 		call s:GitBranchInfoShowMenu(l:tokens[0],l:tokens[1],l:tokens[2])
 	endif
-	return l:text.l:around[0].s:current.l:around[1].(exists("g:git_branch_status_head_current")?"":l:around[0].join(l:branches,",").l:around[1])
+	return l:text.l:around[0].join(l:branches,",").l:around[1].(exists("g:git_branch_status_head_current")?"":l:around[0].s:current.l:around[1])
 endfunction
 
 function! GitBranchInfoLoadBranch()
